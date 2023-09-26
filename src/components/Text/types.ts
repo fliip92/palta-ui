@@ -4,7 +4,7 @@ import type { ViewProps } from '../Box/types';
 import type { Theme } from '../../theme';
 
 export interface TextProps extends RNTextProps, ViewProps {
-  variant: keyof Theme['text'] | string;
+  variant: keyof Theme['text'];
   color?: CSS.Property.Color;
   textDecorationColor?: CSS.Property.Color;
   fontStyle?: 'normal' | 'italic';

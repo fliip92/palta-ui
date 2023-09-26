@@ -1,8 +1,9 @@
-import { Colors } from ".";
 
+import Colors from './palette'
 
 const defaultTheme = {
   colors: {
+    primaryText: 'red',
     palta: 'lightgreen',
     backgrounds: {
       primary: '#FFFFFF',
