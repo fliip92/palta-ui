@@ -1,31 +1,21 @@
 import * as React from 'react';
-
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-palta-ui';
+import { PaltaProvider, Box } from 'react-native-palta-ui';
 
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <PaltaProvider>
+      <Box flex={1} bg="white" margin={24} gap={10} paddingTop={25}>
+        <Box flex={1} bg="green.200" borderRadius={20} flexDirection='row' padding={20}>
+          <Box bg="green.300" flex={1} />
+          <Box bg="green.400" flex={1} />
+          <Box bg="green.500" flex={1} />
+        </Box>
+        <Box flex={1} bg="blue.200" borderRadius={20} flexDirection='row' padding={20}>
+          <Box bg="blue.300" flex={1} />
+          <Box bg="blue.400" flex={1} />
+          <Box bg="blue.500" flex={1} />
+        </Box>
+      </Box>
+    </PaltaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
-  },
-});
